@@ -30,7 +30,7 @@ const App = () => {
   };
 
   const handleNewMajorCitiesChange = (event)=>{
-    setNewMajorCities(event.target.value);
+    setNewMajorCities(event.target.value.split(","));
   };
 
   const handleNewPhotosChange = (event)=>{
