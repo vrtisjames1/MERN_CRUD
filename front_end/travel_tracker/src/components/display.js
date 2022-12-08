@@ -35,8 +35,8 @@ const Display = (props) => {
                     })}
                     </ul>
                     <p>{props.location.date}</p>
-                    <p>{(props.location.recommend) ? <p>Recommend!</p> : <p>Not Recommended</p>} 
-                    </p>
+                    {(props.location.recommend) ? <p>Recommend!</p> : <p>Not Recommended</p>} 
+                    
                 </Card.Body>
 
             </Card>
