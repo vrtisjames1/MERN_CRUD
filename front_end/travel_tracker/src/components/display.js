@@ -8,6 +8,13 @@ import IndexCSS from '../index.module.css';
 
 
 const Display = (props) => {
+    const [showUpdate, setUpdate] = useState(false);
+    const [show, setShow] = useState(true);
+
+    const udpateForm = () =>{
+        setUpdate(true);
+        setShow(false);
+    }
 
     return (
         <div className={IndexCSS.cards}>
@@ -27,17 +34,33 @@ const Display = (props) => {
                         })}
                 <Card.Body>
                     {/* array over major cities */}
-                    <ul>
-                    {props.location.majorCities.map((cityParam) => { 
-                    return (
-                        <li>{cityParam}</li>
-                            )
-                    })}
-                    </ul>
+                    {
+                        showUpdate == true? <div> 
+                            <textarea type="text" placeholder={ props.location.majorCities } onKeyUp={ props.handleUpdatedCitiesChange }/>
+                        </div> 
+                        : 
+                        <ul> 
+                        {props.location.majorCities.map((cityParam) => { 
+                            return (
+                                <li>{cityParam}</li>
+                                    )
+                        })}
+                        </ul>
+                    }
+                    
                     <p>{props.location.date}</p>
                     {(props.location.recommend) ? <p>Recommend!</p> : <p>Not Recommended</p>} 
                     
                     <button onClick={ (event)=>{ props.handleDelete(props.location) } }>Remove Listing</button>
+
+                    {/* updated cities */}
+                    {
+                        show == true? <button onClick={udpateForm}>Update Form</button> : <button onClick={ (event) => { props.handleUpdateCities(props.location); setUpdate(false); setShow(true);} }>Submit</button>
+                    }
+
+                    
+
+
 
                 </Card.Body>
 
