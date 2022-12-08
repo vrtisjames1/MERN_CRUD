@@ -1,6 +1,6 @@
 import {useState} from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';  
-// import {Card, CardGroup} from 'react-bootstrap';  
+import 'bootstrap/dist/css/bootstrap.min.css';  
+import {Card, CardGroup} from 'react-bootstrap';  
 
 // import css
 import IndexCSS from '../index.module.css';
