@@ -20,7 +20,6 @@ const App = () => {
   const [newPhotos, setNewPhotos] = useState('');
   const [newDate, setNewDate] = useState('');
   const [newRecommend, setNewRecommend] = useState(true);
-  //update cities change
   const [editMajorCities, setUpdatedCities] = useState('');
 
 //// HANDLERS
@@ -47,7 +46,7 @@ const App = () => {
 
   const handleUpdatedCitiesChange = (event) => {
     setUpdatedCities(event.target.value.split(","))
-  };
+  }
 
 
 //////// CRUD HANDLERS
@@ -65,7 +64,7 @@ const handleUpdateCities = (list)=>{
 					setLocations(response.data);
 				})
 	})
-};
+}
   
 const handleNewLocationFormSubmit = (event, travelData)=>{
   event.preventDefault();
@@ -118,7 +117,6 @@ const handleNewLocationFormSubmit = (event, travelData)=>{
 return (
   <main>
     <h1>Travel Tracker</h1>
-
     <div>
         <div>
         <h2>Create Travel Listing</h2>
@@ -138,21 +136,22 @@ return (
       </div>
 
       <div>
+
         <div className={IndexCSS.container}>
           {locations.map((locationParam)=>{
             return (
-                <>
+                <div>
                   <Display location={locationParam}
                   handleDelete={handleDelete}
                   handleUpdatedCitiesChange={handleUpdatedCitiesChange}
                   handleUpdateCities={handleUpdateCities}/>
-                </>
+                </div>
                     )
           })}
         </div>
       </div>
 
-      
+
 
   </main>
 
