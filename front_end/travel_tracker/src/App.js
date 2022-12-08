@@ -20,6 +20,8 @@ const App = () => {
   const [newPhotos, setNewPhotos] = useState('');
   const [newDate, setNewDate] = useState('');
   const [newRecommend, setNewRecommend] = useState(true);
+  //update cities change
+  const [editMajorCities, setUpdatedCities] = useState('');
 
 //// HANDLERS
 
@@ -43,8 +45,27 @@ const App = () => {
     { (event.target.checked === true) ? setNewRecommend(true) : setNewRecommend(false)}
   };
 
+  const handleUpdatedCitiesChange = (event) => {
+    setUpdatedCities(event.target.value)
+  }
+
 
 //////// CRUD HANDLERS
+
+const handleUpdateCities = (list)=>{
+	axios.put(`http://localhost:3000/travel/${list._id}`,
+			{
+        country: list.country,
+        majorCities: editMajorCities,
+        photos: list.photos,
+        date: list.date,
+        recommend: list.recommend
+			}
+		).then((response) => {axios.get('http://localhost:3000/travel').then((response) => {
+					setLocations(response.data);
+				})
+	})
+}
   
 const handleNewLocationFormSubmit = (event, travelData)=>{
   event.preventDefault();
@@ -105,7 +126,9 @@ return (
             return (
                 <div>
                   <Display location={locationParam}
-                  handleDelete={handleDelete}/>
+                  handleDelete={handleDelete}
+                  handleUpdatedCitiesChange={handleUpdatedCitiesChange}
+                  handleUpdateCities={handleUpdateCities}/>
                 </div>
                     )
           })}
