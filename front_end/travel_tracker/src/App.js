@@ -3,6 +3,7 @@ import axios from 'axios';
 
 //Display
 import Display from './components/display';
+import Create from './components/create';
 
 const App = () => {
 
@@ -13,7 +14,27 @@ const App = () => {
   const [newDate, setNewDate] = useState('');
   const [newRecommend, setNewRecommend] = useState(true);
 
+//// HANDLERS
 
+  const handleNewCountryChange = (event)=>{
+    setNewCountry(event.target.value);
+  };
+
+  const handleNewMajorCitiesChange = (event)=>{
+    setNewMajorCities(event.target.value);
+  };
+
+  const handleNewPhotosChange = (event)=>{
+    setNewPhotos(event.target.value);
+  };
+
+  const handleNewDateChange = (event)=>{
+    setNewDate(event.target.value);
+  };
+
+  const handleNewRecommendChange = (event)=>{
+    { (event.target.checked === true) ? setNewRecommend(true) : setNewRecommend(false)}
+  };
 
 
 //////// CRUD HANDLERS
@@ -81,6 +102,17 @@ return (
                     )
           })}
         </ul>  
+        </div>
+      </div>
+
+      <div>
+        <div>
+        <h2>Create Travel Listing</h2>
+            
+              <div>
+                <Create />
+              </div>
+                        
         </div>
       </div>
 

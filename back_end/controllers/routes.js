@@ -10,7 +10,7 @@ const travelSeed = require('../models/seed.js');
 //============================================
 //          SEED
 //============================================
-////FIRST uncomment then comment out
+// //FIRST uncomment then comment out
 // Travel.create(travelSeed, (err, data) => {
 //   if (err) console.log(err.message)
 //   console.log(`added provided travel data`)
