@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+//Display
+import Display from './components/display';
+
 const App = () => {
 
   const [locations, setLocations] = useState([]);
@@ -17,7 +20,7 @@ const App = () => {
   
 const handleNewLocationFormSubmit = (event)=>{
   event.preventDefault();
-  axios.post('http://localhost:3000/-travel',
+  axios.post('http://localhost:3000/travel',
       {
           country: newCountry,
           majorCities: newMajorCities,
@@ -25,7 +28,7 @@ const handleNewLocationFormSubmit = (event)=>{
           date: newDate,
           recommend: newRecommend
 
-      }).then(()=>{axios.get('http://localhost:3000/-travel')
+      }).then(()=>{axios.get('http://localhost:3000/travel')
           .then((response)=>{
               setLocations(response.data)
           })
@@ -34,7 +37,7 @@ const handleNewLocationFormSubmit = (event)=>{
 
   const handleEdit = (event, travelData)=>{
     event.preventDefault();
-    axios.put(`http://localhost:3000/-travel/${travelData._id}`,
+    axios.put(`http://localhost:3000/travel/${travelData._id}`,
         {
           country: newCountry,
           majorCities: newMajorCities,
@@ -43,23 +46,22 @@ const handleNewLocationFormSubmit = (event)=>{
           recommend: newRecommend
 
       }).then(()=>{
-            axios.get('http://localhost:3000/-travel').then((response)=>{
+            axios.get('http://localhost:3000/travel').then((response)=>{
                     setLocations(response.data)
                 })
         })
   };
 
   const handleDelete = (travelData)=>{
-    axios.delete(`http://localhost:3000/-travel/${travelData._id}`).then(()=>{
-            axios.get('http://localhost:3000/-travel').then((response)=>{
+    axios.delete(`http://localhost:3000/travel/${travelData._id}`).then(()=>{
+            axios.get('http://localhost:3000/travel').then((response)=>{
                     setLocations(response.data)
                 })
         })
   };
 
-
   useEffect(()=>{
-    axios.get('http://localhost:3000/-travel').then((response)=>{
+    axios.get('http://localhost:3000/travel').then((response)=>{
           setLocations(response.data)
         })
       },[]);
@@ -71,19 +73,13 @@ return (
       <div>
         <div>
         <ul>
-          {locations.map((location)=>{
+          {locations.map((locationParam)=>{
             return (
-              <li>
-                <p>{location.country}</p>
-                <p>{location.majorCities}</p>
-                <p><img src={location.photos} /></p>
-                <p>{location.date}</p>
-                <p>{(location.recommend) ? <p>Recommend!</p> : <p>Not Recommended</p>} 
-                </p>
-              </li>
+                <div>
+                  <Display location={locationParam}/>
+                </div>
                     )
           })}
-          
         </ul>  
         </div>
       </div>
