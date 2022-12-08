@@ -1,6 +1,13 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';  
+// import {Card} from 'react-bootstrap';  
+// import css
+import IndexCSS from './index.module.css';
+
 //Display
 import Display from './components/display';
 import Create from './components/create';
@@ -92,8 +99,8 @@ return (
     <h1>Travel Tracker</h1>
 
       <div>
-        <div>
-        <ul>
+
+        <div className={IndexCSS.container}>
           {locations.map((locationParam)=>{
             return (
                 <div>
@@ -101,7 +108,6 @@ return (
                 </div>
                     )
           })}
-        </ul>  
         </div>
       </div>
 

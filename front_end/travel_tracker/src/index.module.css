@@ -1,3 +1,16 @@
-.photos{
-    max-width: 150px;
+body{
+    margin: 2em;
 }
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.cards{
+    margin: 2em;
+}
+/* .photos{
+    max-width: 150px;
+} */
