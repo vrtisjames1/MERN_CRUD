@@ -14,6 +14,9 @@ const appRouter = require("./controllers/routes.js");
 
 app.use("/travel", appRouter);
 
+//drop database comment
+// mongoose.connection.dropDatabase();
+
 //=================================================
 // connections
 mongoose.connect('mongodb://localhost:27017/travelcrud')
