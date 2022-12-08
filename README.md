@@ -1,6 +1,6 @@
 # MERN_CRUD
 SEIR-EWOKS TW08D04
-
+Creators: James Vrtis / Chester Vincent
 
 instructions:
 BACKEND:
