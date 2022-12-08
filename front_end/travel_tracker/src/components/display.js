@@ -36,7 +36,7 @@ const Display = (props) => {
                     {/* array over major cities */}
                     {
                         showUpdate == true? <div> 
-                            <textarea type="text" placeholder={ props.location.majorCities } onKeyUp={ props.handleUpdatedCitiesChange }/>
+                            <textarea type="text" placeholder={ props.location.majorCities } onKeyUp={ props.handleUpdatedCitiesChange }></textarea>
                         </div> 
                         : 
                         <ul> 
