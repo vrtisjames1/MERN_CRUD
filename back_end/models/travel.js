@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const travelSchema = new mongoose.Schema({
     country: String,
     majorCities: [{type: String}],
-    photos: String,
+    photos: [{type: String}],
     date: String,
     recommend: {type: Boolean, default: true}
 });

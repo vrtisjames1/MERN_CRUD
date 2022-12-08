@@ -30,7 +30,7 @@ router.delete('/:id', (req, res)=>{
 
 //create update route
 router.put('/:id', (req, res)=>{
-    Trvel.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTravel)=>{
+    Travel.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTravel)=>{
         res.json(updatedTravel);
     });
 });
