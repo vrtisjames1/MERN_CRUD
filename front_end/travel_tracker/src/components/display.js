@@ -37,9 +37,13 @@ const Display = (props) => {
                     <p>{props.location.date}</p>
                     {(props.location.recommend) ? <p>Recommend!</p> : <p>Not Recommended</p>} 
                     
+                    <button onClick={ (event)=>{ props.handleDelete(props.location) } }>Remove Listing</button>
+
                 </Card.Body>
 
             </Card>
+
+
         </div>
         )
     }
