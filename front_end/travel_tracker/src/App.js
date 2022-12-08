@@ -17,7 +17,7 @@ const App = () => {
   
 const handleNewLocationFormSubmit = (event)=>{
   event.preventDefault();
-  axios.post('http://localhost:3000/-travel',
+  axios.post('http://localhost:3000/travel',
       {
           country: newCountry,
           majorCities: newMajorCities,
@@ -25,7 +25,7 @@ const handleNewLocationFormSubmit = (event)=>{
           date: newDate,
           recommend: newRecommend
 
-      }).then(()=>{axios.get('http://localhost:3000/-travel')
+      }).then(()=>{axios.get('http://localhost:3000/travel')
           .then((response)=>{
               setLocations(response.data)
           })
@@ -34,7 +34,7 @@ const handleNewLocationFormSubmit = (event)=>{
 
   const handleEdit = (event, travelData)=>{
     event.preventDefault();
-    axios.put(`http://localhost:3000/-travel/${travelData._id}`,
+    axios.put(`http://localhost:3000/travel/${travelData._id}`,
         {
           country: newCountry,
           majorCities: newMajorCities,
@@ -43,15 +43,15 @@ const handleNewLocationFormSubmit = (event)=>{
           recommend: newRecommend
 
       }).then(()=>{
-            axios.get('http://localhost:3000/-travel').then((response)=>{
+            axios.get('http://localhost:3000/travel').then((response)=>{
                     setLocations(response.data)
                 })
         })
   };
 
   const handleDelete = (travelData)=>{
-    axios.delete(`http://localhost:3000/-travel/${travelData._id}`).then(()=>{
-            axios.get('http://localhost:3000/-travel').then((response)=>{
+    axios.delete(`http://localhost:3000/travel/${travelData._id}`).then(()=>{
+            axios.get('http://localhost:3000/travel').then((response)=>{
                     setLocations(response.data)
                 })
         })
@@ -59,7 +59,7 @@ const handleNewLocationFormSubmit = (event)=>{
 
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/-travel').then((response)=>{
+    axios.get('http://localhost:3000/travel').then((response)=>{
           setLocations(response.data)
         })
       },[]);
