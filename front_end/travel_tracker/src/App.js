@@ -117,6 +117,23 @@ const handleNewLocationFormSubmit = (event, travelData)=>{
 return (
   <main>
     <h1>Travel Tracker</h1>
+    <div>
+        <div>
+        <h2>Create Travel Listing</h2>
+            
+              <div>
+                <Create locations={locations}
+                         handleNewLocationFormSubmit={handleNewLocationFormSubmit}
+                         handleNewCountryChange={handleNewCountryChange}
+                         handleNewMajorCitiesChange={handleNewMajorCitiesChange}
+                         handleNewPhotosChange={handleNewPhotosChange}
+                         handleNewDateChange={handleNewDateChange}
+                         handleNewRecommendChange={handleNewRecommendChange}/>
+
+              </div>
+                        
+        </div>
+      </div>
 
       <div>
 
@@ -134,23 +151,7 @@ return (
         </div>
       </div>
 
-      <div>
-        <div>
-        <h2>Create Travel Listing</h2>
-            
-              <div>
-                <Create locations={locations}
-                         handleNewLocationFormSubmit={handleNewLocationFormSubmit}
-                         handleNewCountryChange={handleNewCountryChange}
-                         handleNewMajorCitiesChange={handleNewMajorCitiesChange}
-                         handleNewPhotosChange={handleNewPhotosChange}
-                         handleNewDateChange={handleNewDateChange}
-                         handleNewRecommendChange={handleNewRecommendChange}/>
 
-              </div>
-                        
-        </div>
-      </div>
 
   </main>
 
