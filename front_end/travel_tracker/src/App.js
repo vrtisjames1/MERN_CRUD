@@ -47,7 +47,7 @@ const App = () => {
 
   const handleUpdatedCitiesChange = (event) => {
     setUpdatedCities(event.target.value.split(","))
-  }
+  };
 
 
 //////// CRUD HANDLERS
@@ -65,7 +65,7 @@ const handleUpdateCities = (list)=>{
 					setLocations(response.data);
 				})
 	})
-}
+};
   
 const handleNewLocationFormSubmit = (event, travelData)=>{
   event.preventDefault();
@@ -119,23 +119,7 @@ return (
   <main>
     <h1>Travel Tracker</h1>
 
-      <div>
-
-        <div className={IndexCSS.container}>
-          {locations.map((locationParam)=>{
-            return (
-                <div>
-                  <Display location={locationParam}
-                  handleDelete={handleDelete}
-                  handleUpdatedCitiesChange={handleUpdatedCitiesChange}
-                  handleUpdateCities={handleUpdateCities}/>
-                </div>
-                    )
-          })}
-        </div>
-      </div>
-
-      <div>
+    <div>
         <div>
         <h2>Create Travel Listing</h2>
             
@@ -152,6 +136,23 @@ return (
                         
         </div>
       </div>
+
+      <div>
+        <div className={IndexCSS.container}>
+          {locations.map((locationParam)=>{
+            return (
+                <>
+                  <Display location={locationParam}
+                  handleDelete={handleDelete}
+                  handleUpdatedCitiesChange={handleUpdatedCitiesChange}
+                  handleUpdateCities={handleUpdateCities}/>
+                </>
+                    )
+          })}
+        </div>
+      </div>
+
+      
 
   </main>
 

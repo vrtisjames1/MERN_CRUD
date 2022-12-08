@@ -9,7 +9,7 @@ import IndexCSS from '../index.module.css';
 const Create = (props) => {
 
     return (
-        <div>
+        <>
            
                 <form onSubmit={ (event)=>{ props.handleNewLocationFormSubmit(event, props.locations)}} >
                   <input type="text" placeholder="Country" onChange={props.handleNewCountryChange}/><br/>
@@ -19,11 +19,9 @@ const Create = (props) => {
                   Would You Recommend this Destination? <input type="checkbox" onChange={props.handleNewRecommendChange}/><br/>
                   <input type="submit" value="Create New Travel Listing"/>
                 </form>
-
-                
-            
-        </div>
+           
+        </>
         )
-    }
+    };
     
     export default Create
