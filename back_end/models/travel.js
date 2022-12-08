@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const travelSchema = new mongoose.Schema({
     country: String,
-    majorCities: [{Type: String}],
+    majorCities: [{type: String}],
     photos: String,
     date: String,
-    recommend: {Type: Boolean, Default: true}
+    recommend: {type: Boolean, default: true}
 });
 
 const Travel = mongoose.model('Travel', travelSchema);
