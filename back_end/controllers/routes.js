@@ -1,10 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
-const { db } = require("../models/travel.js");
+
 //============================================
 //required
 const Travel = require('../models/travel.js');
+const travelSeed = require('../models/seed.js');
+
+//============================================
+//          SEED
+//============================================
+////FIRST uncomment then comment out
+// Travel.create(travelSeed, (err, data) => {
+//   if (err) console.log(err.message)
+//   console.log(`added provided travel data`)
+// })
 
 //============================================
 //routes
@@ -34,9 +44,6 @@ router.put('/:id', (req, res)=>{
         res.json(updatedTravel);
     });
 });
-
-
-
 
 //============================================
 //export
