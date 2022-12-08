@@ -13,7 +13,7 @@ const Create = (props) => {
            
                 <form onSubmit={ (event)=>{ props.handleNewLocationFormSubmit(event, props.locations)}} >
                   <input type="text" placeholder="Country" onChange={props.handleNewCountryChange}/><br/>
-                  <input type="text" placeholder="Major Cities" onChange={props.handleNewMajorCityChange}/><br/>
+                  <input type="text" placeholder="Major Cities" onChange={props.handleNewMajorCitiesChange}/><br/>
                   <input type="text" placeholder="Photo Links" onChange={props.handleNewPhotosChange}/><br/>
                   <input type="text" placeholder="Date" onChange={props.handleNewDateChange}/><br/>
                   Would You Recommend this Destination? <input type="checkbox" onChange={props.handleNewRecommendChange}/><br/>
