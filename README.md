@@ -3,12 +3,17 @@ SEIR-EWOKS TW08D04
 
 
 instructions:
+BACKEND:
+npm init touch server.js npm i express
 
-npm init touch server.js npm i express nodemon server.js
+THEN: nodemon server.js
 
-npm i mongoose mongosh
+THEN: npm i mongoose
 
-npm i CORS
+mongosh
+
+npm i cors
+
 
 Download:
 POSTMAN (check intel chip with "About this mac" processor?)
@@ -33,3 +38,8 @@ PUT > GET SEND Verify data has changed
 
 AFTER CORS IS INSTALLED:
 ADD: "Headers" add key of "origin" and value of "whatever.com"
+
+FRONT END:
+npx create-react-app front-end
+cd front-end
+npm start
