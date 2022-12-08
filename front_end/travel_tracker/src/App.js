@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+//Display
+import Display from './components/display';
+
 const App = () => {
 
   const [locations, setLocations] = useState([]);
@@ -57,7 +60,6 @@ const handleNewLocationFormSubmit = (event)=>{
         })
   };
 
-
   useEffect(()=>{
     axios.get('http://localhost:3000/travel').then((response)=>{
           setLocations(response.data)
@@ -71,19 +73,13 @@ return (
       <div>
         <div>
         <ul>
-          {locations.map((location)=>{
+          {locations.map((locationParam)=>{
             return (
-              <li>
-                <p>{location.country}</p>
-                <p>{location.majorCities}</p>
-                <p><img src={location.photos} /></p>
-                <p>{location.date}</p>
-                <p>{(location.recommend) ? <p>Recommend!</p> : <p>Not Recommended</p>} 
-                </p>
-              </li>
+                <div>
+                  <Display location={locationParam}/>
+                </div>
                     )
           })}
-          
         </ul>  
         </div>
       </div>
