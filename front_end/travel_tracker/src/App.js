@@ -46,7 +46,7 @@ const App = () => {
 
 //////// CRUD HANDLERS
   
-const handleNewLocationFormSubmit = (event, locationData)=>{
+const handleNewLocationFormSubmit = (event, travelData)=>{
   event.preventDefault();
   axios.post('http://localhost:3000/travel',
       {
@@ -117,7 +117,7 @@ return (
             
               <div>
                 <Create locations={locations}
-                         hanhandleNewLocationFormSubmitdleEdit={handleNewLocationFormSubmit}
+                         handleNewLocationFormSubmit={handleNewLocationFormSubmit}
                          handleNewCountryChange={handleNewCountryChange}
                          handleNewMajorCitiesChange={handleNewMajorCitiesChange}
                          handleNewPhotosChange={handleNewPhotosChange}
