@@ -46,7 +46,7 @@ const App = () => {
   };
 
   const handleUpdatedCitiesChange = (event) => {
-    setUpdatedCities(event.target.value)
+    setUpdatedCities(event.target.value.split(","))
   }
 
 
