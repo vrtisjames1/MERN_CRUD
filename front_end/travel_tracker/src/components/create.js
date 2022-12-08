@@ -11,7 +11,7 @@ const Create = (props) => {
     return (
         <div>
            
-                <form class="submitForm" onSubmit={ (event)=>{ props.handleNewLocationFormSubmit(event, props.locations)}} >
+                <form onSubmit={ (event)=>{ props.handleNewLocationFormSubmit(event, props.locations)}} >
                   <input type="text" placeholder="Country" onChange={props.handleNewCountryChange}/><br/>
                   <input type="text" placeholder="Major Cities" onChange={props.handleNewMajorCitiesChange}/><br/>
                   <input type="text" placeholder="Photo Links" onChange={props.handleNewPhotosChange}/><br/>
