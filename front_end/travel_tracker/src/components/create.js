@@ -1,6 +1,6 @@
 import {useState} from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';  
-// import {Card, CardGroup} from 'react-bootstrap';  
+import 'bootstrap/dist/css/bootstrap.min.css';  
+import {Card, CardGroup} from 'react-bootstrap';  
 
 // import css
 import IndexCSS from '../index.module.css';
@@ -11,7 +11,7 @@ const Create = (props) => {
     return (
         <div>
            
-                <form class="submitForm" onSubmit={ (event)=>{ props.handleEdit(event, props.locations)}} >
+                <form class="submitForm" onSubmit={ (event)=>{ props.handleNewLocationFormSubmit(event, props.locations)}} >
                   <input type="text" placeholder="Country" onChange={props.handleNewCountryChange}/><br/>
                   <input type="text" placeholder="Major Cities" onChange={props.handleNewMajorCityChange}/><br/>
                   <input type="text" placeholder="Photo Links" onChange={props.handleNewPhotosChange}/><br/>
