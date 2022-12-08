@@ -104,7 +104,8 @@ return (
           {locations.map((locationParam)=>{
             return (
                 <div>
-                  <Display location={locationParam}/>
+                  <Display location={locationParam}
+                  handleDelete={handleDelete}/>
                 </div>
                     )
           })}

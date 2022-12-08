@@ -19,6 +19,8 @@ const Create = (props) => {
                   Would You Recommend this Destination? <input type="checkbox" onChange={props.handleNewRecommendChange}/><br/>
                   <input type="submit" value="Create New Travel Listing"/>
                 </form>
+
+                
             
         </div>
         )
